@@ -1,20 +1,13 @@
 # git-exfiltrate
 
-## Start Infrastructure
-```
-cd server
-docker-compose up
+## Info
 
-# First time setup
-docker exec --user git -it gitea bash
-gitea admin user create --name user1 --password password --email user1@nus.u.edu
-# Login with user 'user1' and password 'password' and create empty repo called "repo" ( set up initialize repo to add README )
-git clone http://user1:password@localhost:3000/user1/repo.git /tmp/repo
-```
+To be run from a Windows machine
 
-## Exfiltrate
-```
-SECRET=abc go run main.go
-git clone http://localhost:3000/user1/repo.git /tmp/exfil-repo
-cd /tmp/exfil-repo && git fetch origin refs/notes/commits:refs/notes/commits -f
-```
+
+## Comments
+When it starts listening, it creates a file called We Up. Then it reads instructions from a file called instructions. Either win command instructions or requests to exfil data.
+
+It's also currently fileless. The repo is being hosted in ram and so for exfil requests, they are handled in 1024 byte chunks and uploaded 1 by 1.
+
+I also append random chars to the end of file names in the event that 2 files have the same name of commands are run seperately
