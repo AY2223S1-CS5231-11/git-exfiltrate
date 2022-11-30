@@ -13,9 +13,9 @@ In order for Git exfiltration to work, we need to set up our own Git repository 
 1. Create a fine-grained [Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to your repository with `Read and Write access to code`.
 1. clone the repository with `git clone https://github.com/AY2223S1-CS5231-11/git-exfiltrate.git`
 1. Modify the code in `Client.go`:
-    1. Switch the `AUTH.Username` variable with your Github email.
-    1. Switch the `AUTH.Password` variable with your created Github Personal Access Token.
-    1. Switch the `REPOSITORY` variable with your created Github repository.
+    1. Switch the `AUTH.Username` variable to your Github email.
+    1. Switch the `AUTH.Password` variable to your created Github Personal Access Token.
+    1. Switch the `REPOSITORY` variable to your created Github `.git` HTTPS repository url.
 1. Commit a file called `instructions`.
     - You may enter commands into the `instructions` file to be executed when the payload is executed.
 1. Run `go build` in the `client` directory.
