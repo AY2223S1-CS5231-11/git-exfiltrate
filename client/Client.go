@@ -1,5 +1,6 @@
 package main
 
+//TODO file or command does not exist
 import (
 	"bufio"
 	"fmt"
@@ -24,14 +25,14 @@ import (
 	memory "github.com/go-git/go-git/v5/storage/memory"
 )
 
-const REPOSITORY = "https://github.com/SeanRobertDH/CS5231_Test_Repo.git"
+const REPOSITORY = "GITHUB REPO HERE"
 const FILE_SIZE = 1024
 const INSTR_FILE = "instructions"
 const SLEEP_SECONDS = 10
 
 var AUTH = &http.BasicAuth{
-	Username: "seandh1998@gmail.com",
-	Password: "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",
+	Username: "GITHUB EMAIL HERE",
+	Password: "GITHUB PAT HERE",
 }
 
 var letterRunes = []rune("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
